@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from Home import show_footer
-import streamlit as st
+from components.footer import show_footer
 from components.predictive_goal import predictive_goal_date
 from utils.data_utils import compute_trend, compute_weekly_averages, compute_moving_average, compute_moving_average_dates
 from utils.charts import plot_day_of_week_bar, plot_month_bar, plot_weight_progression, plot_weekly_average_weight, plot_weekly_table

@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 from datetime import date, timedelta
-from Home import show_footer
+from components.footer import show_footer
 
 st.set_page_config(layout="wide")
 st.title("⚖️ Fitness Calculators")

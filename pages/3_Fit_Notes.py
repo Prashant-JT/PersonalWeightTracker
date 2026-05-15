@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import json
-from Home import show_footer
+from components.footer import show_footer
 from utils.file_utils import is_valid_csv_file, is_valid_json_file
 from utils.gym_charts import plot_exercise_progress
 
@@ -21,9 +21,6 @@ if plan_file is not None:
 fitnotes_file = st.file_uploader("Upload your FitNotes.csv file", type="csv")
 if fitnotes_file is not None:
     st.session_state['fitnotes_file'] = fitnotes_file
-
-plan_file = st.session_state.get('plan_file')
-fitnotes_file = st.session_state.get('fitnotes_file')
 
 # Use session_state for file persistence
 plan_file = st.session_state['plan_file']

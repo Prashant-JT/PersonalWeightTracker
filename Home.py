@@ -1,14 +1,10 @@
-import numpy as np
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-from collections import defaultdict
-import pandas as pd
 import streamlit as st
+from components.footer import show_footer
 
 st.set_page_config(layout="wide")
 st.title('Personal weight loss tracker')
 st.markdown("""
-Welcome to your personal weight loss tracking app!  
+Welcome to your personal weight loss tracking app!
 Track your progress, analyze your trends, and stay motivated on your fitness journey.
 
 ---
@@ -39,28 +35,5 @@ Track your progress, analyze your trends, and stay motivated on your fitness jou
 - **NEW:** Customizable gym progress tracking with your own routine and FitNotes data
 - All data stays private in your browser session
 """)
-
-def show_footer():
-    footer = """
-    <style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #22272B;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-        font-size: 15px;
-        z-index: 100;
-    }
-    </style>
-    <div class="footer">
-        <p>© 2025 Prashant Jeswani Tejwani</p>
-    </div>
-    """
-
-    st.markdown(footer, unsafe_allow_html=True)
 
 show_footer()

@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime
-from Home import show_footer
+from components.footer import show_footer
 
 st.title("📋 Data Editor")
 
@@ -9,11 +9,29 @@ st.title("📋 Data Editor")
 if 'user_data' not in st.session_state:
     uploaded_file = st.file_uploader("Upload your weight data CSV", type="csv")
     if uploaded_file is not None:
-        df = pd.read_csv(uploaded_file, parse_dates=['date'])
-        st.session_state['user_data'] = df
-        st.session_state['file_uploaded'] = True
-        st.success("File uploaded! You can now edit your data.")
-        st.rerun()
+        try:
+            df = pd.read_csv(uploaded_file, parse_dates=['date'])
+            
+            # Validate data
+            if 'date' not in df.columns or 'weight' not in df.columns:
+                st.error("CSV must contain 'date' and 'weight' columns")
+                st.stop()
+            
+            if df.empty:
+                st.error("CSV file is empty")
+                st.stop()
+            
+            if (df['weight'] <= 0).any():
+                st.error("Weight values must be positive")
+                st.stop()
+            
+            st.session_state['user_data'] = df
+            st.session_state['file_uploaded'] = True
+            st.success("File uploaded! You can now edit your data.")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Error reading CSV file: {str(e)}")
+            st.stop()
     else:
         st.info("No CSV? Start by adding your first entry below:")
         

@@ -48,12 +48,61 @@ Upload your workout routine and FitNotes CSV to track your gym progress and prog
 
 ---
 
+## 🚀 Quick Start
+
+### Installation
+
+1. **Clone the repository** (or download the ZIP):
+```bash
+git clone https://github.com/Prashant-JT/PersonalWeightTracker.git
+cd PersonalWeightTracker
+```
+
+2. **Run the setup script**:
+
+**macOS/Linux:**
+```bash
+chmod +x setup_env.sh
+./setup_env.sh
+```
+
+**Windows:**
+```cmd
+setup_env.bat
+```
+
+3. **Start the application**:
+```bash
+# Activate virtual environment first
+source venv/bin/activate  # macOS/Linux
+# or
+venv\Scripts\activate     # Windows
+
+# Run the app
+streamlit run Home.py
+```
+
+For detailed installation instructions, see [SETUP.md](SETUP.md)
+
 ## Usage
 
 - Go to the **Data Editor** page to upload your CSV and manage your data.
 - Use the **Analysis** page to view progress and trends.
 - Visit the **Fit Notes** page to upload your workout plan and FitNotes data, filter by date, and analyze your gym progress.
 - After making changes, always download your updated CSV to save your edits.
+
+## 📁 Project Structure
+
+```
+PersonalWeightTracker/
+├── Home.py                 # Main entry point
+├── config/                 # Configuration settings
+├── components/            # Reusable UI components
+├── pages/                 # Streamlit pages
+├── utils/                 # Utility functions
+├── data/                  # Sample data
+└── requirements.txt       # Dependencies
+```
 
 ## License
 

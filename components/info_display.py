@@ -1,6 +1,17 @@
+"""
+Display components for weight tracking information.
+Functions to show weight loss statistics and summaries.
+"""
 import streamlit as st
 
-def show_total_weight_loss(total_loss):
+
+def show_total_weight_loss(total_loss: float) -> None:
+    """
+    Display total weight loss or gain with appropriate styling.
+    
+    Args:
+        total_loss: Total weight change (positive = loss, negative = gain)
+    """
     if total_loss > 0:
         st.success(f"**Total weight lost:** `{total_loss:.1f} kg`")
     elif total_loss < 0:

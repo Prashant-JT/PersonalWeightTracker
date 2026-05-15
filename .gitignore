@@ -11,4 +11,19 @@ Thumbs.db
 .vscode/
 *.code-workspace
 
+# Environment variables
+.env
+.env.local
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Logs
+*.log
+logs/
+
+# Personal data
 personal_gym/
